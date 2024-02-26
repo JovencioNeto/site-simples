@@ -1,8 +1,19 @@
 
 const switcher = document.querySelector('.btn');
 
-switcher.addEventListener('click',function(){
-    document.body.classList.toggle('dark-theme')
+const corpo = document.body.classList
+
+switcher.addEventListener('click', function(){
+
+    if(corpo.contains('dark-theme')){
+        corpo.remove('dark-theme');
+        corpo.add('light-theme');
+    }
+
+    else{
+        corpo.remove('light-theme');
+        corpo.add('dark-theme');
+    }
 
     var className = document.body.className;
     if(className == "light-theme") {
@@ -14,4 +25,3 @@ switcher.addEventListener('click',function(){
 
     console.log('current Class Name:' + className);
 });
-
